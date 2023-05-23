@@ -1,0 +1,12 @@
+.place__photo {
+  max-width: 282px;
+  width: 100%;
+  min-height: 282px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+
+

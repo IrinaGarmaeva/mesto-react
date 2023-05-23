@@ -1,0 +1,14 @@
+.places {
+  margin: 50px 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 282px);
+  grid-template-rows: repeat(auto-fit, 361px);
+  gap: 20px 17px;
+  justify-content: center;
+}
+
+@media (max-width: 400px) {
+  .places {
+    margin: 36px 0 0 0;
+  }
+}

@@ -1,0 +1,18 @@
+.profile__block-avatar {
+  position: relative;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.7s ease;
+}
+
+.profile__block-avatar:hover {
+  /* background: rgba(0, 0, 0, 0.8); */
+  opacity: 0.8;
+  background-color: rgb(0, 0, 0);
+}
+
+.profile__block-avatar:hover .button_type_edit-avatar {
+  visibility: visible;
+  transition: visibility 4s ease;
+}

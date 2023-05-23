@@ -1,0 +1,12 @@
+.popup__title_type_popup-confirm {
+  margin: 34px 36px 38px 36px;
+}
+
+@media (max-width: 700px) {
+  .popup__title_type_popup-confirm {
+    font-size: 18px;
+    line-height: 122%;
+    margin: 25px 22px 38px 22px;
+  }
+}
+

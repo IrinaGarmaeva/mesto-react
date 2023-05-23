@@ -1,0 +1,8 @@
+.place {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 10px;
+  max-height: 361px;
+  position: relative;
+}

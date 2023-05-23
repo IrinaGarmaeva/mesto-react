@@ -1,0 +1,7 @@
+.place__descriprion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 25px 18px 31px 18px;
+}
