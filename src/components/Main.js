@@ -3,14 +3,14 @@ import api from "../utils/api";
 import Card from "./Card";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
-function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
-  const [cards, setCards] = React.useState([]);
+function Main({ cards, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike, onCardDelete }) {
+  // const [cards, setCards] = React.useState([]);
 
-  React.useEffect(() => {
-    api.getInitialCards()
-    .then(cards => setCards(cards))
-    .catch((error) => console.log(`Error: ${error.status}`))
-  }, [])
+  // React.useEffect(() => {
+  //   api.getInitialCards()
+  //   .then(cards => setCards(cards))
+  //   .catch((error) => console.log(`Error: ${error.status}`))
+  // }, [])
 
   const currentUser = React.useContext(CurrentUserContext);
 
@@ -53,7 +53,7 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
       </section>
       <section className="places" aria-label="Секция с карточками">
         {cards.map((item) => {
-          return <Card key={item._id} card={item} onCardClick={onCardClick} />;
+          return <Card key={item._id} card={item} onCardClick={onCardClick} onCardLike={onCardLike} onCardDelete={onCardDelete}/>;
         })}
       </section>
     </main>

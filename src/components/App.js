@@ -15,6 +15,7 @@ function App() {
   const[isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
   const[selectedCard, setSelectedCard] = React.useState(null);
   const[currentUser, setCurrentUser] = React.useState({});
+  const [cards, setCards] = React.useState([]);
 
   React.useEffect(() => {
     api.getUserData()
@@ -27,6 +28,12 @@ function App() {
       })
     })
     .catch(error => console.log(`Error: ${error.status}`))
+  }, [])
+
+  React.useEffect(() => {
+    api.getInitialCards()
+    .then(cards => setCards(cards))
+    .catch((error) => console.log(`Error: ${error.status}`))
   }, [])
 
   function handleEditProfileClick() {
@@ -45,6 +52,26 @@ function App() {
     setSelectedCard(card);
   }
 
+  function handleCardLike(card) {
+    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    isLiked ?
+    api.deleteLike(card._id).then(newCard => {
+      setCards((state) => state.map((c) => c._id === card._id ? newCard : c))
+    })
+    .catch(error => console.log(`Error: ${error.status}`))
+    : api.putLike(card._id).then(newCard => {
+      setCards((state) => state.map((c) => c._id === card._id ? newCard : c))
+    })
+    .catch(error => console.log(`Error: ${error.status}`))
+  }
+
+  function handleCardDelete(card) {
+    api.deleteCard(card._id).then(res => {
+      setCards(newCardData => newCardData.filter(c => c._id !== card._id))
+    })
+    .catch(error => console.log(`Error: ${error.status}`))
+  }
+
   function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
@@ -58,10 +85,13 @@ function App() {
       <div className="page">
         <Header />
         <Main
+          cards={cards}
           onEditProfile = {handleEditProfileClick}
           onAddPlace = {handleAddPlaceClick}
           onEditAvatar = {handleEditAvatarClick}
           onCardClick={handleCardClick}
+          onCardLike={handleCardLike}
+          onCardDelete={handleCardDelete}
         />
         <Footer />
         <PopupWithForm
