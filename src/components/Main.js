@@ -4,14 +4,6 @@ import Card from "./Card";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 function Main({ cards, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike, onCardDelete }) {
-  // const [cards, setCards] = React.useState([]);
-
-  // React.useEffect(() => {
-  //   api.getInitialCards()
-  //   .then(cards => setCards(cards))
-  //   .catch((error) => console.log(`Error: ${error.status}`))
-  // }, [])
-
   const currentUser = React.useContext(CurrentUserContext);
 
   return (

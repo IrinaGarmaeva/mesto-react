@@ -7,13 +7,6 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
   const[description, setDescription] = React.useState('');
   const currentUser = React.useContext(CurrentUserContext);
 
-  function handleChangeName(evt) {
-    setName(evt.target.value);
-  }
-
-  function handleChangeDescription(evt) {
-    setDescription(evt.target.value);
-  }
 
   React.useEffect(() => {
     setName(currentUser.name);
@@ -44,7 +37,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
       <fieldset className="popup__fieldset">
         <label className="popup__field">
           <input
-            value={name}
+            value={name || ''}
             name="popup-username"
             type="text"
             className="popup__input popup__input_el_name"
@@ -52,13 +45,13 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
             minLength="2"
             maxLength="40"
             required
-            onChange={handleChangeName}
+            onChange={evt => setName(evt.target.value)}
           />
           <span className="popup__input-error popup-username-error"></span>
         </label>
         <label className="popup__field">
           <input
-            value={description}
+            value={description || ''}
             name="popup-job"
             type="text"
             className="popup__input popup__input_el_job"
@@ -66,7 +59,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
             minLength="2"
             maxLength="200"
             required
-            onChange={handleChangeDescription}
+            onChange={evt => setDescription(evt.target.value)}
           />
           <span className="popup__input-error popup-job-error"></span>
         </label>

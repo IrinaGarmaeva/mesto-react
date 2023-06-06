@@ -36,7 +36,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
       </label>
     </fieldset>
     }
-    ></PopupWithForm>
+    />
   )
 }
 
