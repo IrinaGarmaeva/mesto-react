@@ -8,7 +8,8 @@ function PopupWithForm({
   formId,
   formName,
   isOpen,
-  onClose
+  onClose,
+  onSubmit
 }) {
   return (
     <div
@@ -25,6 +26,7 @@ function PopupWithForm({
           id={formId}
           name={formName}
           noValidate
+          onSubmit={onSubmit}
         >
           {children}
           <button className="popup__button" type="submit">
