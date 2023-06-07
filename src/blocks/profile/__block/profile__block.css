@@ -3,7 +3,7 @@
   flex-direction: row;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 700px) {
   .profile__block {
     text-align: center;
     flex-direction: column;

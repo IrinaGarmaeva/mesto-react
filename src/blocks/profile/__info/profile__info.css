@@ -6,7 +6,7 @@
   justify-content: center;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 700px) {
   .profile__info {
     margin: 26px 0 0 0;
   }

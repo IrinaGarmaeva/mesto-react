@@ -11,9 +11,8 @@
 
 @media (max-width: 400px) {
   .header {
-    margin-top: 28px;
     min-height: 56px;
-    padding: 0;
+    padding: 28px 0 0 0;
   }
 }
 

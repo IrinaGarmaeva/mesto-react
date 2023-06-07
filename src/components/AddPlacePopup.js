@@ -6,6 +6,11 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
   const[name, setName] = React.useState('');
   const[link, setLink] = React.useState('');
 
+  React.useEffect(() => {
+    setName('')
+    setLink('')
+  }, [isOpen])
+
   function handleSubmit(evt) {
     evt.preventDefault();
 
@@ -13,6 +18,14 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
       name: name,
       link: link,
     })
+  }
+
+  function handleChangeName(evt) {
+    setName(evt.target.value)
+  }
+
+  function handleChangeLink(evt) {
+    setLink(evt.target.value)
   }
 
   return (
@@ -37,7 +50,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
                   minLength="2"
                   maxLength="30"
                   required
-                  onChange={evt => setName(evt.target.value)}
+                  onChange={handleChangeName}
                 />
                 <span className="popup__input-error card-name-error"></span>
               </label>
@@ -49,7 +62,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
                   className="popup__input popup__input_el_place-link"
                   placeholder="Ссылка на картинку"
                   required
-                  onChange={evt => setLink(evt.target.value)}
+                  onChange={handleChangeLink}
                 />
                 <span className="popup__input-error card-link-error"></span>
               </label>

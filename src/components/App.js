@@ -19,23 +19,16 @@ function App() {
   const [cards, setCards] = React.useState([]);
 
   React.useEffect(() => {
-    api
-      .getUserData()
-      .then((userData) => {
+    Promise.all([api.getUserData(), api.getInitialCards()])
+      .then(([userData, cards]) => {
         setCurrentUser({
           ...userData,
           name: userData.name,
           about: userData.about,
           avatar: userData.avatar,
-        });
+        })
+        setCards(cards);
       })
-      .catch((error) => console.log(`Error: ${error.status}`));
-  }, []);
-
-  React.useEffect(() => {
-    api
-      .getInitialCards()
-      .then((cards) => setCards(cards))
       .catch((error) => console.log(`Error: ${error.status}`));
   }, []);
 

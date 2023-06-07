@@ -11,15 +11,11 @@
 }
 
 
-@media (max-width: 520px) {
+@media (max-width: 700px) {
   .button_type_add {
     margin: 34px 0 0 0;
-  }
-}
-
-@media (max-width: 400px) {
-  .button_type_add {
     width: 282px;
     background-size: 16px 16px;
   }
 }
+

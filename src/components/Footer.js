@@ -1,7 +1,7 @@
 import React from "react";
 
 function Footer() {
-  let year = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
   return (
     <footer className="footer container">

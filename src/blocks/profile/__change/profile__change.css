@@ -1,3 +1,9 @@
 .profile__change {
   display: flex;
 }
+
+@media (max-width: 700px) {
+  .profile__change {
+    justify-content: center;
+  }
+}
