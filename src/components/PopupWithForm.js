@@ -9,7 +9,7 @@ function PopupWithForm({
   formName,
   isOpen,
   onClose,
-  onSubmit
+  onSubmit,
 }) {
 
   return (
