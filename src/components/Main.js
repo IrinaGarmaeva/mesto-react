@@ -1,9 +1,8 @@
 import React from "react";
-import api from "../utils/api";
 import Card from "./Card";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
-function Main({ cards, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike, onCardDelete }) {
+function Main({ cards, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike, onDeleteButtonClick }) {
   const currentUser = React.useContext(CurrentUserContext);
 
   return (
@@ -45,7 +44,7 @@ function Main({ cards, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onC
       </section>
       <section className="places" aria-label="Секция с карточками">
         {cards.map((item) => {
-          return <Card key={item._id} card={item} onCardClick={onCardClick} onCardLike={onCardLike} onCardDelete={onCardDelete}/>;
+          return <Card key={item._id} card={item} onCardClick={onCardClick} onCardLike={onCardLike} onDeleteButtonClick={onDeleteButtonClick}/>;
         })}
       </section>
     </main>
