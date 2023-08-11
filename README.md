@@ -2,12 +2,14 @@
 
 ## Description
 
-Project `Mesto` is an interactive responsive page where users can share photos, delete amd like them, change user information and avatar. Forms are validated on the client side.
+Project `Mesto` is an interactive responsive page where users can share photos, delete and like them, change user information and avatar. Forms are validated on the client side.
 The goal of the project is to solidify knowledge in:
 * JSX
 * Declarative approach
 * Functional components
 * React hooks
+
+[Deploy](https://mesto-react-steel.vercel.app/)
 
 ## Functionality
 
@@ -26,6 +28,15 @@ The goal of the project is to solidify knowledge in:
 * GRID
 * React JS
 * Webpack
+
+## Screenshots
+<img src="./src/images/screen_main_page.jpg" width="100%">
+<details><summary><b>Show all</b></summary>
+<img src="./src/images/screen_edit_profile_info.jpg" width="100%">
+<img src="./src/images/screen_edit_avatar.jpg" width="100%">
+<img src="./src/images/screen_add_place.jpg" width="100%">
+<img src="./src/images/screen_image_popup.jpg" width="100%">
+</details>
 
 ## Usage
 Clone repository:
