@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
@@ -11,17 +11,17 @@ import AddPlacePopup from "./AddPlacePopup";
 import ConfirmPopup from "./ConfirmPopup";
 
 function App() {
-  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
-  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
-  const [isConfirmPopupOpen, setIsConfirmPopupOpen] = React.useState(false);
-  const [selectedCard, setSelectedCard] = React.useState(null);
-  const [currentUser, setCurrentUser] = React.useState({});
-  const [cards, setCards] = React.useState([]);
-  const [thisCard, setThisCard] = React.useState(null);
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
+  const [isConfirmPopupOpen, setIsConfirmPopupOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [currentUser, setCurrentUser] = useState({});
+  const [cards, setCards] = useState([]);
+  const [deletedCard, setDeletedCard] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     Promise.all([api.getUserData(), api.getInitialCards()])
       .then(([userData, cards]) => {
         setCurrentUser({
@@ -53,7 +53,7 @@ function App() {
 
   function handleDeleteButtonClick(card) {
     setIsConfirmPopupOpen(true);
-    setThisCard(card);
+    setDeletedCard(card);
   }
 
   function handleCardLike(card) {
@@ -86,7 +86,6 @@ function App() {
     setIsEditAvatarPopupOpen(false);
     setIsConfirmPopupOpen(false);
     setSelectedCard(null);
-    setThisCard(null);
     setIsLoading(false);
   }
 
@@ -160,7 +159,7 @@ function App() {
             isOpen={isConfirmPopupOpen}
             onClose={closeAllPopups}
             onDeleteCard={handleCardDelete}
-            card={thisCard}
+            card={deletedCard}
             isLoading={isLoading}
           />
           <EditAvatarPopup

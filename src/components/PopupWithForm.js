@@ -1,5 +1,3 @@
-import React from "react";
-
 function PopupWithForm({
   popupName,
   title,
@@ -15,11 +13,16 @@ function PopupWithForm({
   return (
     <div
       className={`popup popup_type_${popupName} ${
-        isOpen ? `popup_opened` : ''
+        isOpen ? `popup_opened` : ""
       }`}
+      onClick={onClose}
     >
-      <div className="popup__container">
-        <button className="popup__close-button" type="button" onClick={onClose}></button>
+      <div className="popup__container" onClick={(evt) => evt.stopPropagation()}>
+        <button
+          className="popup__close-button"
+          type="button"
+          onClick={onClose}
+        ></button>
         <h2 className="popup__title">{title}</h2>
         <form
           action="URL"
