@@ -1,15 +1,16 @@
-# Edicational purpose project "Mesto" on React from [Yandex Practicum](https://practicum.yandex.ru/) Web-developer course.
+# Educational purpose project "Mesto" on React from [Yandex Practicum](https://practicum.yandex.ru/) Web-developer course.
 
 ## Description
 
 Project `Mesto` is an interactive responsive page where users can share photos, delete and like them, change user information and avatar. Forms are validated on the client side.
-The goal of the project is to solidify knowledge in:
+The purpose of the project is to train:
+* React
 * JSX
 * Declarative approach
 * Functional components
 * React hooks
 
-[Deploy](https://mesto-react-steel.vercel.app/)
+This project is hosted on [Vercel](https://mesto-react-steel.vercel.app/)
 
 ## Functionality
 
@@ -54,8 +55,8 @@ Run app:
 
 ## Figma design
 
-### [Макет Figma 1](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
-### [Макет Figma 2](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=0-1&t=2IBiYuzBJASdL3j4-0)
-### [Макет Figma 3](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0-1&t=dDAEaAH6jCRnbhd8-0)
-### [Макет Figma 4](https://www.figma.com/file/PSdQFRHoxXJFs2FH8IXViF/JavaScript.-Sprint-9?type=design&node-id=0-1)
+### [Figma Layout 1](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+### [Figma Layout 2](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=0-1&t=2IBiYuzBJASdL3j4-0)
+### [Figma Layout 3](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0-1&t=dDAEaAH6jCRnbhd8-0)
+### [Figma Layout 4](https://www.figma.com/file/PSdQFRHoxXJFs2FH8IXViF/JavaScript.-Sprint-9?type=design&node-id=0-1)
 
